@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Hidden</title>
+</head>
+<body>
+    <div class="filtro">
+        <select class="filter-opt">
+            <option value="">Selecione uma opção:</option>
+            <option value="todos">TODOS OS DEPARTAMENTOS</option>
+            <option value="admin">Administração</option>
+            <option value="comercial">Comercial</option>
+        </select>
+    </div>
+    <div class="divisor"></div>
+    <div class="admin conteudo">
+        <div class="tag"><h3>Administração</h3></div>
+        <h2>Serviço A</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident vel blanditiis consectetur veniam quae autem, possimus eligendi corrupti temporibus placeat unde quia sit rerum nobis aperiam itaque molestiae non dicta.</p>
+        <div class="divisor-container"><div class="divisor"></div></div>
+    </div>
+    <div class="comercial conteudo">
+        <div class="tag"><h3>Comercial</h3></div>
+        <h2>Serviço A</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident vel blanditiis consectetur veniam quae autem, possimus eligendi corrupti temporibus placeat unde quia sit rerum nobis aperiam itaque molestiae non dicta.</p>
+        <div class="divisor-container"><div class="divisor"></div></div>
+    </div>
+    <div class="admin conteudo">
+        <div class="tag"><h3>Administração</h3></div>
+        <h2>Serviço B</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident vel blanditiis consectetur veniam quae autem, possimus eligendi corrupti temporibus placeat unde quia sit rerum nobis aperiam itaque molestiae non dicta.</p>
+        <div class="divisor-container"><div class="divisor"></div></div>
+    </div>
+    <div class="comercial conteudo">
+        <div class="tag"><h3>Comercial</h3></div>
+        <h2>Serviço B</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident vel blanditiis consectetur veniam quae autem, possimus eligendi corrupti temporibus placeat unde quia sit rerum nobis aperiam itaque molestiae non dicta.</p>
+        <div class="divisor-container"><div class="divisor"></div></div>
+    </div>
+    <div class="admin conteudo">
+        <div class="tag"><h3>Administração</h3></div>
+        <h2>Serviço C</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident vel blanditiis consectetur veniam quae autem, possimus eligendi corrupti temporibus placeat unde quia sit rerum nobis aperiam itaque molestiae non dicta.</p>
+        <div class="divisor-container"><div class="divisor"></div></div>
+    </div>
+    <div class="comercial conteudo">
+        <div class="tag"><h3>Comercial</h3></div>
+        <h2>Serviço C</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident vel blanditiis consectetur veniam quae autem, possimus eligendi corrupti temporibus placeat unde quia sit rerum nobis aperiam itaque molestiae non dicta.</p>
+        <div class="divisor-container"><div class="divisor"></div></div>
+    </div>
+
+    
+<script>
+
+    const selecao = document.querySelector('.filter-opt')
+    const admin = document.querySelectorAll('.admin')
+    const comercial = document.querySelectorAll('.comercial')
+
+    selecao.addEventListener('change', function() {
+        let valorSelecionado = this.value;
+
+
+        if(valorSelecionado === 'todos'){
+            admin.forEach(div => {div.classList.remove('hidden')})
+            comercial.forEach(div => {div.classList.remove('hidden')})
+        } else if (valorSelecionado === 'comercial'){
+            comercial.forEach(div => {div.classList.remove('hidden')})
+            admin.forEach(div => {div.classList.add('hidden')})
+        } else if (valorSelecionado === 'admin'){
+            admin.forEach(div => {div.classList.remove('hidden')})
+            comercial.forEach(div => {div.classList.add('hidden')})
+        }
+
+        });
+        
+
+</script>
+</body>
+</html>
